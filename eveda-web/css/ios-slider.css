@@ -1,0 +1,141 @@
+/* Slider */
+
+.iosSlider { width: 100%; height: 100%; position: relative; background: #666; padding: 0; }
+			
+.iosSlider .slider { width: 100%; height: 100%; position: relative; }
+
+.iosSlider .slider .item { position: relative; top: 0; left: 0; width: 100%; height: 100%; margin: 0; }
+
+.iosSlider .slider #caves { background: url(/img/slides/caves.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #wrecks { background: url(/img/slides/wrecks.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #ice { background: url(/img/slides/ice.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #sharks { background: url(/img/slides/sharks.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #reefs { background: url(/img/slides/reefs.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #epic4k { background: url(/img/slides/epic4k.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #exploration { background: url(/img/slides/exploration.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #marine-life { background: url(/img/slides/marine-life.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #technical-diving { background: url(/img/slides/technical-diving.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #rebreather { background: url(/img/slides/rebreathers.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #science { background: url(/img/slides/science.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #documentary { background: url(/img/slides/documentary.jpg) no-repeat; background-size: cover; }
+.iosSlider .slider #expeditions { background: url(/img/slides/expeditions.jpg) no-repeat; background-size: cover; }
+
+.iosSlider .slider .item .overlay {  
+	position: absolute;
+	top: 25%;
+	right: 0;
+	padding: 0; 
+	opacity: 0;
+	filter: alpha(opacity:0);
+}
+
+
+
+.iosSlider .slider .item .text1 {
+	color: #FFF;
+	font-family: 'Titillium Web', helvetica, arial, serif;
+	font-weight: 100; 
+	font-size: 7em; 
+	text-transform: uppercase;
+	text-align: left; 
+	margin: 0;
+	float: left; 
+	clear: both;
+	text-shadow: 1px 1px 5px #000;
+	/*background-color: rgba(0,0,0,0);*/
+	-moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; 
+    opacity: 1;
+    -webkit-opacity: 1;
+}
+
+.iosSlider .slider .item .overlay:hover {  }
+
+.iosSlider .slider .item .text2 {
+	color: #FFF;
+	font-family: 'Titillium Web', helvetica, arial, serif;
+	font-weight: 200; 
+	font-size: 2em; 
+	line-height: 30px;
+	text-shadow: 1px 1px 5px #000;
+	text-align: justify;
+	margin: 20px 0 0 0;
+	float: left; 
+	clear: both;
+	/*background-color: rgba(0,0,0,0);*/
+	-moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; 
+}
+
+/* Selection Buttons */
+
+.iosSliderButtons { display: none; position: absolute; z-index: 5000; width: 80px; left: 52%; margin-left: -50px; height: 20px; margin-top: -40px; }
+
+.iosSliderButtons .slide-button { float: left; width: 6px; height: 6px; margin: 0 10px 0 0; opacity: 1; background: none; filter: alpha(opacity:100); border: 2px solid #FFF; border-radius: 20px;
+}
+
+.iosSliderButtons .selected { background: #FFF; opacity: 1; filter: alpha(opacity:100); }
+
+.overlay-left .text1, .overlay-left .text2 { text-align: left !important; float: left !important; clear: both; } 
+.overlay-right .text1, .overlay-right .text2 { text-align: right !important; float: right !important; clear: both;  } 
+
+/* //////////////// RESPONSIVE STYLES ///////////////// */
+
+@media screen and (min-width: 1px) {
+	.full-width.slider { height: 200px; margin-top: 0px; }
+	.iosSlider .slider .item { /*background-position: -8% !important;*/ }
+	.iosSlider .slider .item .overlay { display: block; top: 50%; margin-top: 0px;  }
+	.iosSlider .slider .item .text1 { font-size: 2em; line-height: 20px; }
+	.iosSlider .slider .item .text2 { font-size: 1em; line-height: 20px; margin-top: 10px; }
+}
+
+/* iphone landscape */
+@media screen and (min-width: 640px) {
+	.full-width.slider { height: 300px; margin-top: 0px; }
+	.iosSlider .slider .item { /*background-position: -8% !important;*/ }
+	.iosSlider .slider .item .overlay { display: block; top: 50%; margin-top: 0px;  }
+	.iosSlider .slider .item .text1 { font-size: 3em; line-height: 20px; }
+	.iosSlider .slider .item .text2 { font-size: 1.5em; line-height: 20px; margin-top: 20px; }
+}
+
+/* ipad portrait */
+@media screen and (min-width: 768px) {
+
+	.full-width.slider { height: 400px; margin-top: 0px; }
+	.iosSlider .slider .item { /*background-position: -8% !important;*/ }
+	.iosSlider .slider .item .overlay { display: block; top: 50%; margin-top: -15px; }
+	.iosSlider .slider .item .text1 { font-size: 4em; line-height: 30px; }
+	.iosSlider .slider .item .text2 { font-size: 2em; line-height: 30px; margin-top: 20px; }
+}
+
+/* full wide version */
+@media screen and (min-width: 960px) {
+
+	.full-width.slider { height: 600px; margin-top: 0px; }
+	.iosSlider .slider .item { /*background-position: -8% !important;*/ }
+	.iosSlider .slider .item .overlay { display: block; top: 50%; margin-top: -25px; }
+	.iosSlider .slider .item .text1 { font-size: 6em; line-height: 50px; }
+	.iosSlider .slider .item .text2 { font-size: 2em; line-height: 30px; margin-top: 20px; }
+}
+
+/* very wide version */
+@media screen and (min-width: 1500px) {
+
+	.full-width.slider { height: 750px; margin-top: 0px; }
+	.iosSlider .slider .item { /*background-position: -10% !important;*/ }
+	.iosSlider .slider .item .overlay { display: block; top: 50%; margin-top: -25px; }
+	.iosSlider .slider .item .text1 { font-size: 7em; line-height: 50px; }
+	.iosSlider .slider .item .text2 { font-size: 2em; line-height: 40px; margin-top: 20px; }
+}
+
+
+
+
+
+
+
+

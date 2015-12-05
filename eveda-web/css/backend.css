@@ -1,0 +1,58 @@
+/* Admin Area Style Overides */
+
+
+
+
+/* //////////////////////////////// START OF RESPONSIVE STYLES //////////////////////////////// */
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+
+}
+
+@media screen and (orientation: portrait) {
+
+}
+
+
+
+/* ////////////////////////////////  bigger than mobile version //////////////////////////////// */
+
+@media screen and (min-width: 480px) {
+
+
+	
+}
+
+/* //////////////////////////////// ipad mini or galaxy note version //////////////////////////////// */  
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+
+
+}
+
+/* //////////////////////////////// big ipad version //////////////////////////////// */
+
+@media screen and (min-width: 768px) {
+
+
+
+/* //////////////////////////////// full wide version //////////////////////////////// */ 
+
+@media screen and (min-width: 960px) {
+
+
+}
+
+/* //////////////////////////////// full wide version //////////////////////////////// */ 
+
+@media screen and (min-width: 1500px) {
+
+
+
+}
+
+
+
+
+
