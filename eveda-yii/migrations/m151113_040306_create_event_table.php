@@ -22,7 +22,7 @@ class m151113_040306_create_event_table extends Migration
             'end_date' => Schema::TYPE_DATETIME . ' NOT NULL' . ' DEFAULT CURRENT_TIMESTAMP',
             'url' => Schema::TYPE_STRING,
             'notes' => Schema::TYPE_STRING,
-            'image' => Schema::TYPE_STRING,
+            'image' => Schema::TYPE_TEXT,
             'visibility' => Schema::TYPE_BOOLEAN,
             'region_id' => Schema::TYPE_INTEGER . ' NOT NULL',
             'genre_id' => Schema::TYPE_INTEGER . ' NOT NULL',

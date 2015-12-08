@@ -57,7 +57,8 @@ class Event extends \yii\db\ActiveRecord
             [['user_id', 'title', 'region_id', 'genre_id'], 'required'],
             [['user_id', 'visibility', 'region_id', 'genre_id'], 'integer'],
             [['start_date', 'end_date', 'created_at', 'updated_at'], 'safe'],
-            [['title', 'location', 'url', 'notes', 'image'], 'string', 'max' => 255]
+            [['title', 'location', 'url', 'notes'], 'string', 'max' => 255],
+            [['image'], 'string'],
         ];
     }
 

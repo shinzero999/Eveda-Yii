@@ -27,7 +27,12 @@ use yii\widgets\DetailView;
             'end_date',
             'url:url',
             'notes',
-            'image',
+            [
+                'attribute' => 'image',
+                'value' => '<img src="' . $event->image . '" style="height: 500px;"/>',
+                'label' => 'Image',
+                'format' => 'raw',
+            ],
             [
                 'attribute' => 'visibility',
                 'value' => $event->visibility == 1 ? "Public" : "Private",

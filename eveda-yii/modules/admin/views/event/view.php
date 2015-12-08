@@ -40,7 +40,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'end_date',
             'url:url',
             'notes',
-            'image',
+            [
+                'attribute' => 'image',
+                'value' => '<img src="' . $model->image . '" style="height: 500px;"/>',
+                'label' => 'Image',
+                'format' => 'raw',
+            ],
             [
                 'attribute' => 'visibility',
                 'value' => $model->visibility == 1 ? "Public" : "Private",
