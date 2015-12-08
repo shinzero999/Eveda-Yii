@@ -15,7 +15,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -28,8 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'user_id',
+            //'id',
+            [
+                'attributes' => 'user_id',
+                'label' => 'Username',
+                'value' => $model->user->display_name,
+            ],
+            //'user_id',
             'title',
             'location',
             'start_date',
@@ -37,11 +41,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'url:url',
             'notes',
             'image',
-            'visibility',
-            'region_id',
-            'genre_id',
-            'created_at',
-            'updated_at',
+            [
+                'attribute' => 'visibility',
+                'value' => $model->visibility == 1 ? "Public" : "Private",
+                'label' => 'Visibility',
+            ],
+            [
+                'attribute' => 'region_id',
+                'value' => $model->region->name,
+                'label' => 'Region',
+            ],
+            [
+                'attribute' => 'genre_id',
+                'value' => $model->genre->name,
+                'label' => 'Genre',
+            ],
+            //'created_at',
+            //'updated_at',
         ],
     ]) ?>
 

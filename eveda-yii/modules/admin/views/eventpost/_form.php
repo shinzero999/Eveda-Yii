@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\modules\admin\models\EventPost;
+use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\EventPost */
@@ -10,6 +11,42 @@ use app\modules\admin\models\EventPost;
 ?>
 
 <div class="eventpost-form">
+
+    <?= DetailView::widget([
+        'model' => $event,
+        'attributes' => [
+            //'id',
+            [
+                'attribute' => 'Username',
+                'value' => $event->user->display_name,
+                'label' => 'Username',
+            ],
+            'title',
+            'location',
+            'start_date',
+            'end_date',
+            'url:url',
+            'notes',
+            'image',
+            [
+                'attribute' => 'visibility',
+                'value' => $event->visibility == 1 ? "Public" : "Private",
+                'label' => 'Visibility',
+            ],
+            [
+                'attribute' => 'region_id',
+                'value' => $event->region->name,
+                'label' => 'Region',
+            ],
+            [
+                'attribute' => 'genre_id',
+                'value' => $event->genre->name,
+                'label' => 'Genre',
+            ],
+            //'created_at',
+            //'updated_at',
+        ],
+    ]) ?>
 
     <?php $form = ActiveForm::begin(); ?>
 

@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Upgrade */
 
-$this->title = 'Update Upgrade: ' . ' ' . $model->id;
+$this->title = 'Update Upgrade: ' . ' ' . $model->display_name;
 $this->params['breadcrumbs'][] = ['label' => 'Upgrades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'upgrade' => $upgrade,
     ]) ?>
 
 </div>

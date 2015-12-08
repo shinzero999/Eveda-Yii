@@ -35,6 +35,12 @@ class UpgradeController extends Controller
     {
         $searchModel = new UpgradeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->setSort([
+                            'defaultOrder' => [
+                                'created_at' => SORT_DESC,
+                                'id' => SORT_ASC, 
+                            ]
+                        ]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -88,6 +94,7 @@ class UpgradeController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'upgrade' => $upgrade,
             ]);
         }
     }

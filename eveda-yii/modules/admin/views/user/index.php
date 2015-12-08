@@ -13,10 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
@@ -30,10 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Role',
                 'value' => 'roleName',
             ],
-            [
+            /*[
                 'attribute' => 'eventsCount',
                 'label' => 'Public events count',
-            ],
+            ],*/
             //'auth_key',
             //'password_hash',
             // 'password_reset_token',
@@ -50,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'created_at',
             // 'updated_at',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}'],
         ],
     ]); ?>
 

@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\modules\admin\models\Event;
 
 /**
  * EventPostController implements the CRUD actions for EventPost model.
@@ -86,12 +87,14 @@ class EventpostController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $event = Event::findOne($model->event_id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'event' => $event,
             ]);
         }
     }

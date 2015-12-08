@@ -56,7 +56,7 @@ class UserController extends Controller
     {
         //$admin = User::findOne(Yii::$app->user->id);
 
-        $dataProvider = new ActiveDataProvider([
+        /*$dataProvider = new ActiveDataProvider([
             'query' => User::find()
                             ->select([
                                 '{{user}}.*', 
@@ -66,6 +66,10 @@ class UserController extends Controller
                             ->where('role < :staff', [':staff' => User::ROLE_STAFF])
                             ->andWhere('visibility = :visibility', [':visibility' => Event::VISIBILITY_PUBLIC])
                             ->groupBy('{{user}}.id'),
+        ]);*/
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => User::find()->where('role < :staff', [':staff' => User::ROLE_STAFF]),
         ]);
 
         return $this->render('index', [

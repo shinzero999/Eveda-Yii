@@ -38,6 +38,13 @@ class EventController extends Controller
             'query' => Event::find(),
         ]);
 
+        $dataProvider->setSort([
+                            'defaultOrder' => [
+                                'created_at' => SORT_DESC,
+                                'id' => SORT_ASC, 
+                            ]
+                        ]);
+
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
