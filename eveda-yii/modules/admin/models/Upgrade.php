@@ -36,8 +36,19 @@ class Upgrade extends \yii\db\ActiveRecord
         return [
             [['user_id'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['phone_number', 'address', 'about'], 'string', 'max' => 255]
+            [['phone_number', 'address', 'about'], 'string', 'max' => 255],
+            [['phone_number'], 'validatePhoneNumber'],
         ];
+    }
+
+    public function validatePhoneNumber($attribute, $params)
+    {
+        if (!preg_match('/^[0-9]*$/', $this->$attribute)) {
+             $this->addError($attribute, 'Phone number should only contain numbers');
+        }
+        if (!preg_match('/^.{10,11}$/', $this->$attribute) ) {
+             $this->addError($attribute, 'Phone number must be between 10 to 11 characters.');
+        }
     }
 
     /**
